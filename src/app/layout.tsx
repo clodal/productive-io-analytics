@@ -1,6 +1,9 @@
 import './globals.css'
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Nav from './nav'
+import { ProductiveAuth } from '../lib/Productive'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +18,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="h-full bg-gray-50 dark:bg-black">
+      <body className={inter.className}>
+        <Suspense>
+          <Nav />
+        </Suspense>
+        {children}
+        <ProductiveAuth />
+      </body>
     </html>
   )
 }
