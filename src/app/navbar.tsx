@@ -87,6 +87,14 @@ export default function Navbar() {
                 <div className="hidden h-full sm:-my-px sm:flex sm:space-x-8">
                   {rightNavigation.map(renderDesktopNavigationItem)}
                 </div>
+                <div className="ml-4 relative top-0.5">
+                  <iframe
+                    src="https://ghbtns.com/github-btn.html?user=clodal&repo=productive-io-analytics&type=star&count=true"
+                    width="80"
+                    height="20"
+                    title="GitHub"
+                  />
+                </div>
               </div>
 
               {/* Mobile Menu Trigger */}
