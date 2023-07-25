@@ -4,7 +4,7 @@ Productive.io Analytics is a user-friendly open-source application that connects
 
 ## 💎 Live Demo
 
-Visit [productive-io-analytics.vercel.app](https://productive-analytics.vercel.app) to view your sprint dashboard.
+Visit [productive-io-analytics.vercel.app](https://productive-io-analytics.vercel.app) to view your sprint dashboard.
 
 ![Productive.io Analytics Preview](docs/images/preview.png)
 
@@ -69,7 +69,7 @@ Yarn
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/clodal/productive-analytics.git
+   git clone https://github.com/clodal/productive-io-analytics.git
    ```
 2. Install NPM packages
    ```sh
