@@ -33,7 +33,9 @@ const ProductiveSettingsForm: React.FC<ProductiveSettingsFormProps> = () => {
   }>({})
   useEffect(() => {
     setLocalStorageProductiveAuth(
-      JSON.parse(localStorage.getItem(PRODUCTIVE_AUTH_LOCAL_STORAGE_KEY) || ''),
+      JSON.parse(
+        localStorage.getItem(PRODUCTIVE_AUTH_LOCAL_STORAGE_KEY) || '{}',
+      ),
     )
   }, [])
 
@@ -54,8 +56,9 @@ const ProductiveSettingsForm: React.FC<ProductiveSettingsFormProps> = () => {
 
   // Set defaultValues if localStorage exists but form values are empty
   useEffect(() => {
+    const hasDefaultValues = Object.values(defaultValues).filter(Boolean).length
     const hasFormValues = Object.values(getValues()).filter(Boolean).length
-    if (defaultValues && !hasFormValues) reset(defaultValues)
+    if (hasDefaultValues && !hasFormValues) reset(defaultValues)
   }, [defaultValues])
 
   const onSubmit: SubmitHandler<SearchFormInputs> = async (values) => {
@@ -64,8 +67,9 @@ const ProductiveSettingsForm: React.FC<ProductiveSettingsFormProps> = () => {
       PRODUCTIVE_AUTH_LOCAL_STORAGE_KEY,
       JSON.stringify(values),
     )
-    // Trigger router push for use effect to take place
-    router.push(pathname)
+
+    // Trigger page reload for useEffect to take place
+    window.location.reload()
   }
 
   return (

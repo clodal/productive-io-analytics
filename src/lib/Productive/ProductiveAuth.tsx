@@ -50,7 +50,7 @@ const ProductiveAuth: React.FC<ProductiveAuthProps> = () => {
   // ==============================
   // Effects
   // ==============================
-  // Get productiveAuth from localStorage
+  // Step 1. Get productiveAuth from localStorage
   const [productiveAuth, setProductiveAuth] = useState()
   useEffect(() => {
     const productiveAuthLocalStorageString = localStorage.getItem(
@@ -62,7 +62,7 @@ const ProductiveAuth: React.FC<ProductiveAuthProps> = () => {
     setProductiveAuth(productiveAuth)
   }, [])
 
-  // Set productiveToken (param) from productiveAuth (localStorage)
+  // Step 2. Set productiveToken (param) from productiveAuth (localStorage)
   useEffect(() => {
     if (productiveAuth && !hasProductiveToken)
       setProductiveToken(productiveAuth)
