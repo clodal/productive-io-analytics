@@ -82,8 +82,7 @@ Yarn
 
 ## 🙏 Acknowledgements
 
-1. Productive.io
-2. Burndown Charts
+1. [Productive.io](https://productive.io/)
 
 
 ## 📄 License
